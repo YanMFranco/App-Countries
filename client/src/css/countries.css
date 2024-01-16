@@ -1,0 +1,51 @@
+.contenedor-countries{
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ffe600, 0 0 70px #ffe600, 0 0 80px #ffe600, 0 0 100px #ffe600;
+}
+
+.contenedor-countries .card{
+    text-align: center;
+    width: 320px;
+    height: 320px;
+    border-radius: 50px;
+    background-color: rgba(172, 172, 172, 0.315);
+}
+
+.contenedor-countries img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.contenedor-countries h1{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 599px) {
+    .contenedor-countries .card{
+        text-align: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 50px;
+        background-color: rgba(172, 172, 172, 0.315);
+    }
+
+    .contenedor-countries h1{
+        font-size: 20px;
+    }
+
+    .contenedor-countries img{
+        height: 100px;
+        width: 100px;
+    }
+
+    .contenedor-countries .continente{
+        font-size: 18px;
+    }
+}
