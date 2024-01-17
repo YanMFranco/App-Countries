@@ -10,7 +10,7 @@ export const GET_FULL = "GET_FULL";
 export const getCiudades = (page) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/countries?page=${page}`)
+      .get(`/countries?page=${page}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_CIUDADES, payload: data }));
   };
@@ -19,7 +19,7 @@ export const getCiudades = (page) => {
 export const getPor_Nombre = (page,nombre) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/countries?page=${page}&nombre=${nombre}`)
+      .get(`/countries?page=${page}&nombre=${nombre}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_PORNOMBRE, payload: data }));
   };
@@ -34,7 +34,7 @@ export const getFiltros = (page,orderA_Z,orderP,orderC) => {
 
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/countries/filtros?page=${page}${ordenPo}${ordenA}${ordenCo}`)
+      .get(`/countries/filtros?page=${page}${ordenPo}${ordenA}${ordenCo}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_FILTROS, payload: data }));
   };
@@ -43,7 +43,7 @@ export const getFiltros = (page,orderA_Z,orderP,orderC) => {
 export const getTodo = () => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/tourism/activities`)
+      .get(`/tourism/activities`)
       .then((response)=>response.data)
       .then((data)=>dispatch({type: GET_ACTIVIDADES , payload:data}))
   }

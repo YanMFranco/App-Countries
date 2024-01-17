@@ -4,6 +4,9 @@ import Home from './components/Home';
 import Index from './components/Index';
 import { Route, Routes } from "react-router-dom";
 import CrearActividad from './components/CrearActividad';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 function App() {
 
