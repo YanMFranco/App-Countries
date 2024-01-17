@@ -5,6 +5,7 @@ import { getCiudades, getPor_Nombre, getFiltros, getTodo } from '../redux/action
 import Countries from './Countries';
 import Cargando from './Caragando';
 import Ordenamiento from './Ordenamiento';
+import Header from './Header';
 
 const Home = () => {
 
@@ -96,7 +97,7 @@ const Home = () => {
 
     return (
         <div className="contenedor-home">
-
+            <Header />
             <h1>CountriesAPP</h1>
 
             <Ordenamiento onOrderAlphabetical={handleOrderAlphabetical} onOrderPoblacion={handleOrderPopulation} onOrderContinente={handleOrderContinet} onOrderActividad={handleOrderActividad} />

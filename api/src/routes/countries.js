@@ -2,6 +2,7 @@ const { Router } = require('express');
 const obtenerPais = require('../controller/countriesAll');
 const obtenerById = require('../controller/countriesById');
 const paisesFiltros = require('../controller/filtros');
+const todosPaises = require('../controller/countriesTodo');
 
 const routerCountries = Router();
 
@@ -14,6 +15,16 @@ routerCountries.get("/", async (req, res) => {
         res.status(400).send(error.message);
     }
 
+})
+
+routerCountries.get("/todo", async (req, res) => {
+    try {
+        const countries = await todosPaises();
+        
+        res.status(200).send(countries);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
 })
 
 routerCountries.get("/ID/:id", async (req,res)=> {

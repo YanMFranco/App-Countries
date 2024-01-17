@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCiudadDetalle } from "../redux/action";
 import { useParams } from 'react-router-dom';
 import Actividad from "./Actividad";
+import Header from "./Header";
+import Cargando from "./Caragando";
 
 const DetalleCountri = () => {
 
@@ -15,10 +17,9 @@ const DetalleCountri = () => {
         dispatch(getCiudadDetalle(id));
     }, [dispatch, id]);
 
-    console.log(countryDetalle.tourisms);
-
     return (
         <div className="container-Detalle">
+            <Header />
             <div className="item1">
                 <h2><span className="titulos" >ID:</span> {countryDetalle.id}</h2>
                 <img src={`${countryDetalle.img}`} alt={`Bandera de ${countryDetalle.name}`} />
@@ -38,7 +39,7 @@ const DetalleCountri = () => {
             </div>
 
             <div className="item3">
-                <h2><span className="titulos" >Actividades turisticas: </span>{
+                <h2><span className="titulos" >Actividades turisticas</span></h2>{
                     countryDetalle.tourisms ?
                         countryDetalle.tourisms.length === 0 ? " No hay datos"
                             : countryDetalle.tourisms.map((info) => <Actividad
@@ -49,8 +50,8 @@ const DetalleCountri = () => {
                                 duracion={info.duration}
                                 temporada={info.season}
                             />)
-                        : "Cargando"}
-                </h2>
+                        : <Cargando />}
+                
             </div>
 
         </div>

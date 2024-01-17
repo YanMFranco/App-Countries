@@ -5,6 +5,7 @@ export const GET_PORNOMBRE = "GET_PORNOMBRE";
 export const GET_FILTROS = "GET_FILTROS";
 export const GET_ACTIVIDADES ="GET_ACTIVIDADES";
 export const GET_CIUDADDETALLE = "GET_CIUDADDETALLE";
+export const GET_FULL = "GET_FULL";
 
 export const getCiudades = (page) => {
   return function (dispatch) {
@@ -14,8 +15,6 @@ export const getCiudades = (page) => {
       .then((data) => dispatch({ type: GET_CIUDADES, payload: data }));
   };
 };
-
-
 
 export const getPor_Nombre = (page,nombre) => {
   return function (dispatch) {
@@ -57,4 +56,19 @@ export const getCiudadDetalle = (id) => {
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_CIUDADDETALLE, payload: data }));
   };
+}
+
+export const getFull = () => {
+  return function (dispatch) {
+    axios
+      .get(`http://localhost:3001/countries/todo`)
+      .then((response) => response.data)
+      .then((data) => dispatch({ type: GET_FULL, payload: data }));
+  };
+};
+
+export const crear_Actividad = ({ input }) => {
+  return async function () {
+    const res = await axios.post(`http://localhost:3001/tourism`, input)
+  }
 }

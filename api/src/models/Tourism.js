@@ -14,10 +14,10 @@ module.exports = (sequelize) => {
             }
         },
         duration: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         },
         season: {
-            type: DataTypes.ENUM('primavera', 'verano', 'otoño', 'invierno')
+            type: DataTypes.ENUM('Todo el año','primavera', 'verano', 'otoño', 'invierno')
         }
     }, {
         timestamps: false

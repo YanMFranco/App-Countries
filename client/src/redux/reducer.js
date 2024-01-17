@@ -1,9 +1,10 @@
-import { GET_CIUDADES, GET_PORNOMBRE, GET_FILTROS, GET_ACTIVIDADES , GET_CIUDADDETALLE } from "./action";
+import { GET_CIUDADES, GET_PORNOMBRE, GET_FILTROS, GET_ACTIVIDADES, GET_CIUDADDETALLE, GET_FULL } from "./action";
 
 const initialState = {
     ciudadesBD: [],
     actividades: [],
     ciudadesDetalle: {},
+    full: [],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ciudadesBD: action.payload,
+            };
+        case GET_FULL:
+            return {
+                ...state,
+                full: action.payload,
             };
         case GET_PORNOMBRE:
             return {

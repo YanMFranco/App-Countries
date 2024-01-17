@@ -21,6 +21,8 @@ const Ordenamiento = ({ onOrderAlphabetical, onOrderPoblacion, onOrderContinente
 
     const nombresUnicosArray = [...nombresUnicos];
 
+    console.log(actividades);
+
     return (
         <div className="container-Ordenamiento">
             <div>

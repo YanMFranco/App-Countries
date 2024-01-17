@@ -2,26 +2,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ffe600, 0 0 70px #ffe600, 0 0 80px #ffe600, 0 0 100px #ffe600;
 }
+
 
 .container-Detalle img{
     border-radius: 20px;
 }
 
+.container-Detalle h2{
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ffe600, 0 0 70px #ffe600, 0 0 80px #ffe600, 0 0 100px #ffe600;
+}
+
 .container-Detalle .titulos{
     font-size: 35px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ffe600, 0 0 70px #ffe600, 0 0 80px #ffe600, 0 0 100px #ffe600;
 }
 
 .container-Detalle .item1 h2{
-    text-align:center ;
+    text-align: center;
 }
 
 .container-Detalle .item2{
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
+    border-radius: 50px;
+    background-color: rgba(172, 172, 172, 0.315);
 }
 
 .container-Detalle .item2 div{
     margin: 0 50px;
 }
+
+.container-Detalle .item3{
+    padding: 20px;
+    border-radius: 50px;
+    background-color: rgba(172, 172, 172, 0.315);
+}
+
+
