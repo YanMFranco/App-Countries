@@ -1,8 +1,9 @@
-import { GET_CIUDADES, GET_PORNOMBRE, GET_FILTROS ,GET_ACTIVIDADES} from "./action";
+import { GET_CIUDADES, GET_PORNOMBRE, GET_FILTROS, GET_ACTIVIDADES , GET_CIUDADDETALLE } from "./action";
 
 const initialState = {
     ciudadesBD: [],
     actividades: [],
+    ciudadesDetalle: {},
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -26,6 +27,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 actividades: action.payload,
+            }
+        case GET_CIUDADDETALLE:
+            return {
+                ...state,
+                ciudadesDetalle: action.payload,
             }
         default:
             return { ...state };

@@ -1,0 +1,27 @@
+.container-Detalle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1), 0 0 40px #ffe600, 0 0 70px #ffe600, 0 0 80px #ffe600, 0 0 100px #ffe600;
+}
+
+.container-Detalle img{
+    border-radius: 20px;
+}
+
+.container-Detalle .titulos{
+    font-size: 35px;
+}
+
+.container-Detalle .item1 h2{
+    text-align:center ;
+}
+
+.container-Detalle .item2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-Detalle .item2 div{
+    margin: 0 50px;
+}

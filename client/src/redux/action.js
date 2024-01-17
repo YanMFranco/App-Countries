@@ -4,6 +4,7 @@ export const GET_CIUDADES = "GET_CIUDADES";
 export const GET_PORNOMBRE = "GET_PORNOMBRE";
 export const GET_FILTROS = "GET_FILTROS";
 export const GET_ACTIVIDADES ="GET_ACTIVIDADES";
+export const GET_CIUDADDETALLE = "GET_CIUDADDETALLE";
 
 export const getCiudades = (page) => {
   return function (dispatch) {
@@ -47,4 +48,13 @@ export const getTodo = () => {
       .then((response)=>response.data)
       .then((data)=>dispatch({type: GET_ACTIVIDADES , payload:data}))
   }
+}
+
+export const getCiudadDetalle = (id) => {
+  return function (dispatch) {
+    axios
+      .get(`http://localhost:3001/countries/ID/${id}`)
+      .then((response) => response.data)
+      .then((data) => dispatch({ type: GET_CIUDADDETALLE, payload: data }));
+  };
 }

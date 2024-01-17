@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTodo } from '../redux/action';
 import { useEffect } from "react";
 
-const Ordenamiento = ({ onOrderAlphabetical, onOrderPoblacion, onOrderContinente , onOrderActividad }) => {
+const Ordenamiento = ({ onOrderAlphabetical, onOrderPoblacion, onOrderContinente, onOrderActividad }) => {
 
     const dispatch = useDispatch();
 
@@ -13,7 +13,13 @@ const Ordenamiento = ({ onOrderAlphabetical, onOrderPoblacion, onOrderContinente
         dispatch(getTodo());
     }, [dispatch]);
 
+    const nombresUnicos = new Set();
 
+    actividades.forEach(ciudad => {
+        nombresUnicos.add(ciudad.name);
+    });
+
+    const nombresUnicosArray = [...nombresUnicos];
 
     return (
         <div className="container-Ordenamiento">
@@ -51,7 +57,7 @@ const Ordenamiento = ({ onOrderAlphabetical, onOrderPoblacion, onOrderContinente
                 <select onChange={(e) => onOrderActividad(e.target.value)}>
                     <option value="">---Todos---</option>
                     {
-                        actividades.map((nombre) => <option name="nombre" key={nombre.id} value={nombre.name}>{nombre.name}</option>)
+                        nombresUnicosArray.map((nombre) => <option name="nombre" key={nombre} value={nombre}>{nombre}</option>)
                     }
                 </select>
             </div>

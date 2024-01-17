@@ -90,11 +90,9 @@ const Home = () => {
         setSearch("");
     }
 
-    const actividadFiltrada = actividades.filter((acti)=> acti.name==filtrarActi);
-    console.log(actividadFiltrada);
-    
-    console.log(filtrarActi);
-    
+    const actividadFiltrada = actividades.filter((acti) => acti.name == filtrarActi);
+    const nuevoAc = actividadFiltrada.map((nw) => nw.countries);
+    const acF = nuevoAc.map(item => item[0])
 
     return (
         <div className="contenedor-home">
@@ -114,7 +112,7 @@ const Home = () => {
             </div>
 
             <div className="datos">
-                {filtrarActi ? actividadFiltrada.map(
+                {filtrarActi ? acF.map(
                     (ciudad) => <Countries
                         key={ciudad.id}
                         id={ciudad.id}
@@ -122,7 +120,7 @@ const Home = () => {
                         img={ciudad.img}
                         continet={ciudad.continet}
                     />
-                ):!ciudadesBD.datos ? <Cargando /> : ciudadesBD.datos.map(
+                ) : !ciudadesBD.datos ? <Cargando /> : ciudadesBD.datos.map(
                     (ciudad) => <Countries
                         key={ciudad.id}
                         id={ciudad.id}
@@ -132,7 +130,7 @@ const Home = () => {
                     />
                 )
                 }
-                
+
             </div>
 
             <div className="botones">
