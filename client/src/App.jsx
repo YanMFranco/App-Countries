@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import CrearActividad from './components/CrearActividad';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL = 'https://app-countries-production-605e.up.railway.app/';
 
 function App() {
 
