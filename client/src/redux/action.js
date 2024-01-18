@@ -52,7 +52,7 @@ export const getTodo = () => {
 export const getCiudadDetalle = (id) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/countries/ID/${id}`)
+      .get(`/countries/ID/${id}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_CIUDADDETALLE, payload: data }));
   };
