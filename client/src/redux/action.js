@@ -61,7 +61,7 @@ export const getCiudadDetalle = (id) => {
 export const getFull = () => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/countries/todo`)
+      .get(`/countries/todo`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_FULL, payload: data }));
   };
@@ -69,6 +69,6 @@ export const getFull = () => {
 
 export const crear_Actividad = ({ input }) => {
   return async function () {
-    const res = await axios.post(`http://localhost:3001/tourism`, input)
+    const res = await axios.post(`/tourism`, input)
   }
 }
